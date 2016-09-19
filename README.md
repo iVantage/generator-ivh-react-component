@@ -19,12 +19,16 @@ Then generate your new project:
 yo ivh-react-component
 ```
 
-## Getting To Know Yeoman
+Now go forth and build components.
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+## What's in the Box
+
+A minimal yet featureful boilerplate for building React components.
+
+- Bundling with webpack
+- Testing with karma, mocha, chai, and enzyme
+- Code coverage with istanbul
+- ES6 transpilation with iVantage presets
 
 ## License
 
