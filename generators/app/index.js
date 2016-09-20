@@ -77,7 +77,7 @@ module.exports = yeoman.Base.extend({
   },
 
   install: function () {
-    //this.installDependencies({bower: false})
+    this.installDependencies({bower: false})
   }
 })
 
