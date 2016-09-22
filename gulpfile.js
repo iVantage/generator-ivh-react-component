@@ -7,9 +7,10 @@ const mocha = require('gulp-mocha')
 const istanbul = require('gulp-istanbul')
 const nsp = require('gulp-nsp')
 const plumber = require('gulp-plumber')
+const noTpls = '!generators/app/templates/**'
 
 gulp.task('static', function () {
-  return gulp.src('**/*.js')
+  return gulp.src(['**/*.js', noTpls])
     .pipe(excludeGitignore())
     .pipe(eslint())
     .pipe(eslint.format())
@@ -21,7 +22,7 @@ gulp.task('nsp', function (cb) {
 })
 
 gulp.task('pre-test', function () {
-  return gulp.src('generators/**/*.js')
+  return gulp.src(['generators/**/*.js', noTpls])
     .pipe(excludeGitignore())
     .pipe(istanbul({
       includeUntested: true
@@ -32,7 +33,7 @@ gulp.task('pre-test', function () {
 gulp.task('test', ['pre-test'], function (cb) {
   var mochaErr
 
-  gulp.src('test/**/*.js')
+  gulp.src(['test/**/*.js', noTpls])
     .pipe(plumber())
     .pipe(mocha({reporter: 'spec'}))
     .on('error', function (err) {
@@ -45,7 +46,7 @@ gulp.task('test', ['pre-test'], function (cb) {
 })
 
 gulp.task('watch', function () {
-  gulp.watch(['generators/**/*.js', 'test/**'], ['test'])
+  gulp.watch(['generators/**/*.js', 'test/**', noTpls], ['test'])
 })
 
 gulp.task('prepublish', ['nsp'])
