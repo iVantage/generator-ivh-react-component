@@ -20,11 +20,12 @@ describe('generator-ivh-react-component:app', function () {
       '.editorconfig',
       '.eslintrc.js',
       '.gitignore',
-      'package.json',
       'README.md',
-      'webpack.config.js',
+      'karma.conf.js',
+      'package.json',
       'src/components/FooBar.jsx',
-      'src/components/FooBar_spec.jsx'
+      'src/components/FooBar_spec.jsx',
+      'webpack.config.js'
     ])
   })
 })

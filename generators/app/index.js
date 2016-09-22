@@ -67,6 +67,7 @@ module.exports = yeoman.Base.extend({
     cp('_eslintrc.js', '.eslintrc.js')
     cp('_gitignore', '.gitignore')
     cp('_babelrc', '.babelrc')
+    cp('karma.conf.js', 'karma.conf.js')
     cpTpl('webpack.config.js', 'webpack.config.js')
     cpTpl('package.json', 'package.json')
     cpTpl('README.md', 'README.md')
