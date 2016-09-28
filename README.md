@@ -101,9 +101,15 @@ artifacts easy.
 
 - "rimraf"
 
+The in-version allows you tag production copies of your component that can be
+installed directly from git.
+
+- "in-version"
+
+
 ## License
 
-MIT © [iVantage Health Analytics, LLC](www.ivantagehealth.com)
+MIT Â© [iVantage Health Analytics, LLC](www.ivantagehealth.com)
 
 
 [npm-image]: https://badge.fury.io/js/generator-ivh-react-component.svg

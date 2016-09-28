@@ -21,6 +21,8 @@ How to use `<%= className %>`:
 
 ## Scripts
 
+- `npm run bump` Increment the package version and publish (git tag). I.e. `npm
+  run bump minor`.
 - `npm run clean` Kill old build artifacts.
 - `npm test` Run all unit tests once. Test coverage results will be placed in
   `./coverage/<platform>`.

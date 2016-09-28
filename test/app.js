@@ -9,7 +9,8 @@ describe('generator-ivh-react-component:app', function () {
       .withPrompts({
         moduleName: 'foo-bar',
         className: 'FooBar',
-        desc: 'Super blargus'
+        desc: 'Super blargus',
+        installDeps: 'y'
       })
       .toPromise()
   })

@@ -39,6 +39,11 @@ module.exports = yeoman.Base.extend({
       name: 'desc',
       message: 'Please enter a description for your package.',
       default: 'I built a large app once. It was awful.'
+    }, {
+      type: 'input',
+      name: 'installDeps',
+      message: 'Shall I install project dependencies for you? (Y/n)',
+      default: 'Y'
     }]
 
     return this.prompt(prompts).then(function (props) {
@@ -78,7 +83,9 @@ module.exports = yeoman.Base.extend({
   },
 
   install: function () {
-    this.installDependencies({bower: false})
+    if('Y' === this.props.installDeps.toUpperCase()) {
+      this.installDependencies({bower: false})
+    }
   }
 })
 
