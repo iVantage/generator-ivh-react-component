@@ -11,8 +11,8 @@
     "clean": "rimraf dist",
     "test": "npm run lint && cross-env NODE_ENV=test karma start --",
     "test:watch": "karma start --single-run false --auto-watch true --reporters spec",
-    "lint": "eslint *.js *.jsx src && npm run lint-free",
-    "lint-free": "echo Such style. Much class. Wow."
+    "lint": "eslint *.js *.jsx src && npm run lint:free",
+    "lint:free": "echo Such style. Much class. Wow."
   },
   "author": "iVantage",
   "license": "UNLICENSED",
