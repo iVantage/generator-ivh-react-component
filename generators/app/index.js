@@ -1,6 +1,6 @@
 'use strict'
 const path = require('path')
-const yeoman = require('yeoman-generator')
+const Generator = require('yeoman-generator')
 const chalk = require('chalk')
 const _ = require('lodash')
 
@@ -14,7 +14,7 @@ const guessComponentName = () => {
   return _.upperFirst(ret)
 }
 
-module.exports = yeoman.Base.extend({
+module.exports = Generator.extend({
   initializing: function() {
     this.props = {}
   },

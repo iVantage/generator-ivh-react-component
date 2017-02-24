@@ -1,10 +1,10 @@
 'use strict'
-const assert = require('yeoman-assert')
 const path = require('path')
+const assert = require('yeoman-assert')
 const helpers = require('yeoman-test')
 
-describe('generator-ivh-react-component:app', function () {
-  before(function () {
+describe('generator-ivh-react-component:app', function() {
+  before(function() {
     return helpers.run(path.join(__dirname, '../generators/app'))
       .withPrompts({
         moduleName: 'foo-bar',
@@ -15,7 +15,7 @@ describe('generator-ivh-react-component:app', function () {
       .toPromise()
   })
 
-  it('creates files', function () {
+  it('creates files', function() {
     assert.file([
       '.babelrc',
       '.editorconfig',

@@ -1,6 +1,6 @@
 # generator-ivh-react-component [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
-> iVantage flavored components for React
+> iVantage flavored components for React.
 
 ## Installation
 
@@ -109,10 +109,11 @@ installed directly from git.
 
 ## License
 
-MIT Â© [iVantage Health Analytics, LLC](www.ivantagehealth.com)
+MIT ÃÂ© [iVantage Health Analytics, LLC](www.ivantagehealth.com)
 
 
 [npm-image]: https://badge.fury.io/js/generator-ivh-react-component.svg
 [npm-url]: https://npmjs.org/package/generator-ivh-react-component
 [daviddm-image]: https://david-dm.org/ivantage/generator-ivh-react-component.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/ivantage/generator-ivh-react-component
+
