@@ -42,8 +42,8 @@ module.exports = Generator.extend({
     }, {
       type: 'input',
       name: 'installDeps',
-      message: 'Shall I install project dependencies for you? (Y/n)',
-      default: 'Y'
+      message: 'Shall I install project dependencies for you? (y/N)',
+      default: 'N'
     }]
 
     return this.prompt(prompts).then(function (props) {
