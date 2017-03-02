@@ -41,6 +41,11 @@ module.exports = Generator.extend({
       default: 'I built a large app once. It was awful.'
     }, {
       type: 'input',
+      name: 'useDotFiles',
+      message: 'Shall I include dot files, e.g. babel/eslint configs? (Y/n).',
+      default: 'Y'
+    }, {
+      type: 'input',
       name: 'installDeps',
       message: 'Shall I install project dependencies for you? (y/N)',
       default: 'N'
@@ -68,10 +73,13 @@ module.exports = Generator.extend({
       )
     }
 
-    cp('_editorconfig', '.editorconfig')
-    cp('_eslintrc.js', '.eslintrc.js')
-    cp('_gitignore', '.gitignore')
-    cp('_babelrc', '.babelrc')
+    if(this.props.useDotFiles.toUpperCase() === 'Y') {
+      cp('_editorconfig', '.editorconfig')
+      cp('_eslintrc.js', '.eslintrc.js')
+      cp('_gitignore', '.gitignore')
+      cp('_babelrc', '.babelrc')
+    }
+
     cp('karma.conf.js', 'karma.conf.js')
     cpTpl('webpack.config.js', 'webpack.config.js')
     cpTpl('_package.json', 'package.json')
