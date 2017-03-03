@@ -84,10 +84,10 @@ module.exports = Generator.extend({
     cpTpl('webpack.config.js', 'webpack.config.js')
     cpTpl('_package.json', 'package.json')
     cpTpl('README.md', 'README.md')
-    cpTpl('src/components/Greeter.jsx',
-        `src/components/${this.props.className}.jsx`)
-    cpTpl('src/components/Greeter_spec.jsx',
-        `src/components/${this.props.className}_spec.jsx`)
+    cpTpl('src/components/Greeter.js',
+        `src/components/${this.props.className}.js`)
+    cpTpl('src/components/Greeter_spec.js',
+        `src/components/${this.props.className}_spec.js`)
   },
 
   install: function () {

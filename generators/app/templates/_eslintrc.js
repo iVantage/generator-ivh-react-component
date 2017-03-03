@@ -4,7 +4,7 @@ module.exports = {
     'commonjs': true,
     'es6': true
   },
-  'extends': 'ivantage',
+  'extends': ['ivantage', 'plugin:react/recommended'],
   'parserOptions': {
     'ecmaFeatures': {
       'jsx': true

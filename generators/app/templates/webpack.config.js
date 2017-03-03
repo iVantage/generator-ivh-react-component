@@ -6,9 +6,9 @@ const srcPath = path.join(__dirname, 'src')
 module.exports = {
   // If you use anything other than a single entry you'll need to update the
   // karama config webpack param manually
-  entry: './src/components/<%= className %>.jsx',
+  entry: './src/components/<%= className %>.js',
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js']
   },
   output: {
     library: '<%= className %>',
@@ -33,12 +33,12 @@ module.exports = {
   },
   module: {
     preLoaders: [{
-      test: /\.jsx?$/,
+      test: /\.js$/,
       loader: 'eslint-loader',
       include: srcPath
     }],
     loaders: [{
-      test: /\.jsx?$/,
+      test: /\.js$/,
       loader: 'babel-loader',
       include: srcPath
     }]

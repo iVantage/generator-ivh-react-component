@@ -18,11 +18,11 @@ module.exports = (config) => {
     webpack: {
       devtool: 'inline-source-map',
       resolve: {
-        extensions: ['', '.js', '.jsx']
+        extensions: ['', '.js']
       },
       module: {
         loaders: [{
-          test: /\.jsx?$/,
+          test: /\.js$/,
           loader: 'babel-loader',
           exclude: path.resolve(__dirname, 'node_modules')
         }, {
