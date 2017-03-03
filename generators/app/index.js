@@ -73,7 +73,7 @@ module.exports = Generator.extend({
       )
     }
 
-    if(this.props.useDotFiles.toUpperCase() === 'Y') {
+    if('Y' === this.props.useDotFiles.toUpperCase()) {
       cp('_editorconfig', '.editorconfig')
       cp('_eslintrc.js', '.eslintrc.js')
       cp('_gitignore', '.gitignore')

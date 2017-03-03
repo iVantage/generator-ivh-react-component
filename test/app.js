@@ -10,6 +10,7 @@ describe('generator-ivh-react-component:app', function() {
         moduleName: 'foo-bar',
         className: 'FooBar',
         desc: 'Super blargus',
+        useDotFiles: 'y',
         installDeps: 'y'
       })
       .toPromise()
@@ -24,8 +25,8 @@ describe('generator-ivh-react-component:app', function() {
       'README.md',
       'karma.conf.js',
       'package.json',
-      'src/components/FooBar.jsx',
-      'src/components/FooBar_spec.jsx',
+      'src/components/FooBar.js',
+      'src/components/FooBar.test.js',
       'webpack.config.js'
     ])
   })
