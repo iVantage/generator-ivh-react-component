@@ -1,8 +1,8 @@
 /* eslint-env node */
 
 const path = require('path')
-const srcFiles = 'src/**/!(*_spec).*'
-const testFiles = 'src/**/*_spec.*'
+const srcFiles = 'src/**/!(*.test).*'
+const testFiles = 'src/**/*.test.*'
 
 module.exports = (config) => {
   config.set({
