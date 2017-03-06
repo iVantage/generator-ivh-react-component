@@ -85,8 +85,8 @@ module.exports = Generator.extend({
     cpTpl('README.md', 'README.md')
     cpTpl('src/components/Greeter.js',
         `src/components/${this.props.className}.js`)
-    cpTpl('src/components/Greeter.test.js',
-        `src/components/${this.props.className}.test.js`)
+    cpTpl('src/components/Greeter.spec.js',
+        `src/components/${this.props.className}.spec.js`)
   },
 
   install: function () {
