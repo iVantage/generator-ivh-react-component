@@ -83,6 +83,9 @@ module.exports = Generator.extend({
       cp('_babelrc', '.babelrc')
     }
 
+    cp('src/mocks/fileMock.js', 'src/mocks/fileMock.js')
+    cp('src/mocks/styleMock.js', 'src/mocks/styleMock.js')
+    cp('postcss.config.js', 'postcss.config.js')
     cpTpl('webpack.config.js', 'webpack.config.js')
     cpTpl('_package.json', 'package.json')
     cpTpl('README.md', 'README.md')
@@ -91,6 +94,8 @@ module.exports = Generator.extend({
         `src/components/${moduleName}/index.js`)
     cpTpl('src/components/greeter/Greeter.js',
         `src/components/${moduleName}/${className}.js`)
+    cpTpl('src/components/greeter/Greeter.css',
+        `src/components/${moduleName}/${className}.css`)
     cpTpl('src/components/greeter/Greeter.spec.js',
         `src/components/${moduleName}/${className}.spec.js`)
   },

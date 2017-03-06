@@ -38,6 +38,13 @@ module.exports = {
       test: /\.js$/,
       use: 'babel-loader',
       include: srcPath
+    }, {
+      test: /\.css$/,
+      use: [
+        'style-loader',
+        'css-loader?importLoaders=1',
+        'postcss-loader'
+      ]
     }]
   }
 }
