@@ -58,6 +58,9 @@ module.exports = Generator.extend({
   },
 
   writing: function () {
+    const className = this.props.className
+    const moduleName = this.props.moduleName
+
     const cp = (from, to) => {
       this.fs.copy(
         this.templatePath(from),
@@ -83,10 +86,13 @@ module.exports = Generator.extend({
     cpTpl('webpack.config.js', 'webpack.config.js')
     cpTpl('_package.json', 'package.json')
     cpTpl('README.md', 'README.md')
-    cpTpl('src/components/Greeter.js',
-        `src/components/${this.props.className}.js`)
-    cpTpl('src/components/Greeter.spec.js',
-        `src/components/${this.props.className}.spec.js`)
+    cpTpl('src/index.js', 'src/index.js')
+    cpTpl('src/components/greeter/index.js',
+        `src/components/${moduleName}/index.js`)
+    cpTpl('src/components/greeter/Greeter.js',
+        `src/components/${moduleName}/${className}.js`)
+    cpTpl('src/components/greeter/Greeter.spec.js',
+        `src/components/${moduleName}/${className}.spec.js`)
   },
 
   install: function () {

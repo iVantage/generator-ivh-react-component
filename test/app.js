@@ -24,8 +24,10 @@ describe('generator-ivh-react-component:app', function() {
       '.gitignore',
       'README.md',
       'package.json',
-      'src/components/FooBar.js',
-      'src/components/FooBar.spec.js',
+      'src/index.js',
+      'src/components/foo-bar/index.js',
+      'src/components/foo-bar/FooBar.js',
+      'src/components/foo-bar/FooBar.spec.js',
       'webpack.config.js'
     ])
   })
