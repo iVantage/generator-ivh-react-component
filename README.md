@@ -96,7 +96,7 @@ artifacts easy.
 
 ## License
 
-MIT ÃÂÃÂ© [iVantage Health Analytics, LLC](www.ivantagehealth.com)
+MIT © [iVantage Health Analytics, LLC](www.ivantagehealth.com)
 
 
 [npm-image]: https://badge.fury.io/js/generator-ivh-react-component.svg
