@@ -26,8 +26,8 @@ Now go forth and build components.
 A minimal yet featureful boilerplate for building React components.
 
 - Bundling with webpack
-- Testing with karma, mocha, chai, and enzyme
-- Code coverage with istanbul
+- Testing with Jest and Enzyme
+- Test coverage a la Jest
 - ES6 transpilation with iVantage presets
 
 ## Packages Explained
@@ -39,45 +39,29 @@ required features. This section provides a brief explanation (and justification)
 of the included packages.
 
 We use the babel transpiler to turn es6 (es2015) JavaScript and JSX into
-JavaScript of today. Since we're processing all that JS anyway we might as well
-inject code coverage markers (via istanbul) during testing. The `cross-env`
-package allows us to tell our npm scripts that we're in a e.g. testing
-environment in a cross platform friendly way.
+JavaScript of today. The various babale plugins unluck different features for
+us.
 
 - "babel-core"
-- "babel-plugin-istanbul"
 - "babel-plugin-syntax-jsx"
 - "babel-preset-es2015"
 - "babel-preset-react"
-- "cross-env"
 
-Karma is our test runner which lets us run our tests in real browsers. For
-speedy development we're just using PhantomJS (a headless browser) but you may
-install the launcher for your favorite browser and use that instead.
+Jest is our test runner, it provides code coverage reports and interactive
+test running capabilities.
 
 Chai and mocha give us some nice struct and syntax for our tests suites and
 assertions. We need a few connecting plugins to make the test runner aware of
 these libraries.
 
-Enzyme is a special library with some handy utilities for working with testing
-with React elements.
+Enzyme is a special library with some handy utilities for testing with React
+elements.
 
-- "chai"
 - "enzyme"
 - "eslint"
 - "eslint-config-ivantage"
-- "eslint-loader"
 - "eslint-plugin-react"
-- "karma"
-- "karma-chai"
-- "karma-coverage"
-- "karma-mocha"
-- "karma-nyan-reporter"
-- "karma-phantomjs-launcher"
-- "karma-spec-reporter"
-- "karma-webpack"
-- "karma-sourcemap-loader"
-- "mocha"
+- "jest"
 
 This is a react component afterall. We need the library itself as well as some
 helpers which allow us to run tests and render elements.
@@ -87,29 +71,32 @@ helpers which allow us to run tests and render elements.
 - "react-addons-test-utils"
 - "react-dom"
 
+We use postcss to add some post-processing steps to our css. For example,
+`autoprefixer` adds vendor specific prefixes to your css automatically and as
+needed.
+
+- "autoprefixer"
+- "postcss-custom-properties"
+
 Webpack is responsible for bundling all our code together and resolving
 any `require` and `import`s. Pretty much any module that ends in *-loader* is
 around to let webpack correctly load and package up files.
 
 - "webpack"
-- "json-loader"
-- "mocha-loader"
 - "babel-loader"
+- "postcss-loader"
+- "css-loader"
+- "style-loader"
 
 Like a cross platform `rm -rf`, rimraf is just around to make cleaning old build
 artifacts easy.
 
 - "rimraf"
 
-The in-version allows you tag production copies of your component that can be
-installed directly from git.
-
-- "in-version"
-
 
 ## License
 
-MIT ÃÂ© [iVantage Health Analytics, LLC](www.ivantagehealth.com)
+MIT ÃÂÃÂ© [iVantage Health Analytics, LLC](www.ivantagehealth.com)
 
 
 [npm-image]: https://badge.fury.io/js/generator-ivh-react-component.svg
