@@ -80,7 +80,6 @@ module.exports = Generator.extend({
       cp('_babelrc', '.babelrc')
     }
 
-    cp('karma.conf.js', 'karma.conf.js')
     cpTpl('webpack.config.js', 'webpack.config.js')
     cpTpl('_package.json', 'package.json')
     cpTpl('README.md', 'README.md')

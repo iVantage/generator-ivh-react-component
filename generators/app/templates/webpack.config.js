@@ -4,18 +4,15 @@ const path = require('path')
 const srcPath = path.join(__dirname, 'src')
 
 module.exports = {
-  // If you use anything other than a single entry you'll need to update the
-  // karama config webpack param manually
   entry: './src/components/<%= className %>.js',
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['.js']
   },
   output: {
     library: '<%= className %>',
     libraryTarget: 'umd',
     path: './dist',
-    filename: 'index.js',
-    include: srcPath
+    filename: 'index.js'
   },
   externals: {
     react: {
@@ -32,14 +29,14 @@ module.exports = {
     }
   },
   module: {
-    preLoaders: [{
+    rules: [{
+      enforce: 'pre',
       test: /\.js$/,
       loader: 'eslint-loader',
       include: srcPath
-    }],
-    loaders: [{
+    }, {
       test: /\.js$/,
-      loader: 'babel-loader',
+      use: 'babel-loader',
       include: srcPath
     }]
   }
