@@ -73,19 +73,23 @@ helpers which allow us to run tests and render elements.
 
 We use postcss to add some post-processing steps to our css. For example,
 `autoprefixer` adds vendor specific prefixes to your css automatically and as
-needed.
+needed. You may optionally include include support for importing scss files via
+`node-sass`.
 
 - "autoprefixer"
 - "postcss-custom-properties"
+- "node-sass"
 
 Webpack is responsible for bundling all our code together and resolving
 any `require` and `import`s. Pretty much any module that ends in *-loader* is
-around to let webpack correctly load and package up files.
+around to let webpack correctly load and package up files. Note that the
+`sass-loader` is only optionally included.
 
 - "webpack"
 - "babel-loader"
 - "postcss-loader"
 - "css-loader"
+- "sass-loader"
 - "style-loader"
 
 Like a cross platform `rm -rf`, rimraf is just around to make cleaning old build
