@@ -47,8 +47,8 @@ module.exports = Generator.extend({
     }, {
       type: 'input',
       name: 'includeScss',
-      message: 'Shall I include support of SCSS files? (Y/n).',
-      default: 'n'
+      message: 'Shall I include support for SCSS files? (y/N).',
+      default: 'N'
     }, {
       type: 'input',
       name: 'installDeps',
