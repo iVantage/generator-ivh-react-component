@@ -39,11 +39,12 @@ module.exports = {
       use: 'babel-loader',
       include: srcPath
     }, {
-      test: /\.css$/,
+      test: /\.<% if (includeScss) { %>s?<% } %>css$/,
       use: [
         'style-loader',
         'css-loader?importLoaders=1',
-        'postcss-loader'
+        'postcss-loader'<% if (includeScss) { %>,
+        'sass-loader'<% } %>
       ]
     }]
   }

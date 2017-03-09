@@ -46,6 +46,11 @@ module.exports = Generator.extend({
       default: 'Y'
     }, {
       type: 'input',
+      name: 'includeScss',
+      message: 'Shall I include support of SCSS files? (Y/n).',
+      default: 'n'
+    }, {
+      type: 'input',
       name: 'installDeps',
       message: 'Shall I install project dependencies for you? (y/N)',
       default: 'N'
@@ -54,6 +59,9 @@ module.exports = Generator.extend({
     return this.prompt(prompts).then(function (props) {
       // To access props later use this.props.someAnswer
       this.props = props
+      // override props
+      this.props.includeScss =  props.includeScss.toUpperCase() === 'Y'
+
     }.bind(this))
   },
 
