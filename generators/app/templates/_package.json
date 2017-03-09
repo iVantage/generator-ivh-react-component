@@ -20,7 +20,7 @@
   "jest": {
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/mocks/fileMock.js",
-      "\\.css$": "<rootDir>/src/mocks/styleMock.js"
+      "\\.<% if(includeScss) { %>s?<% } %>css$": "<rootDir>/src/mocks/styleMock.js"
     }
   },
   "peerDependencies": {
@@ -39,7 +39,7 @@
     "eslint-config-ivantage": "^0.2.0",
     "eslint-loader": "^1.6.3",
     "eslint-plugin-react": "^6.10.0",
-    "jest": "^19.0.2",<% if (includeScss) { %>
+    "jest": "^19.0.2",<% if(includeScss) { %>
     "node-sass": "^4.5.0",<% } %>
     "postcss-custom-properties": "^5.0.2",
     "postcss-loader": "^1.3.3",
@@ -47,7 +47,7 @@
     "react-addons-shallow-compare": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
-    "rimraf": "^2.6.1",<% if (includeScss) { %>
+    "rimraf": "^2.6.1",<% if(includeScss) { %>
     "sass-loader": "^6.0.2",<% } %>
     "style-loader": "^0.13.2",
     "webpack": "^2.2.1"
