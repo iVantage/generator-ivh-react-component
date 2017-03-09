@@ -60,8 +60,9 @@ module.exports = Generator.extend({
       // To access props later use this.props.someAnswer
       this.props = props
       // override props
-      this.props.includeScss =  props.includeScss.toUpperCase() === 'Y'
-
+      this.props.includeScss = 'Y' === props.includeScss.toUpperCase()
+      this.props.installDeps = 'Y' === props.installDeps.toUpperCase()
+      this.props.useDotFiles = 'Y' === props.useDotFiles.toUpperCase()
     }.bind(this))
   },
 
@@ -84,7 +85,7 @@ module.exports = Generator.extend({
       )
     }
 
-    if('Y' === this.props.useDotFiles.toUpperCase()) {
+    if(this.props.useDotFiles) {
       cp('_editorconfig', '.editorconfig')
       cp('_eslintrc.js', '.eslintrc.js')
       cp('_gitignore', '.gitignore')
@@ -109,7 +110,7 @@ module.exports = Generator.extend({
   },
 
   install: function () {
-    if('Y' === this.props.installDeps.toUpperCase()) {
+    if(this.props.installDeps) {
       this.installDependencies({bower: false})
     }
   }
