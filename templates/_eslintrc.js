@@ -18,6 +18,7 @@ module.exports = {
   'globals': {
     'describe': false,
     'expect': false,
-    'it': false
+    'it': false,
+    'jest': false
   }
 }
