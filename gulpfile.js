@@ -7,7 +7,7 @@ const mocha = require('gulp-mocha')
 const istanbul = require('gulp-istanbul')
 const nsp = require('gulp-nsp')
 const plumber = require('gulp-plumber')
-const noTpls = '!generators/app/templates/**'
+const noTpls = '!templates/**'
 
 gulp.task('static', function() {
   return gulp.src(['**/*.js', noTpls])

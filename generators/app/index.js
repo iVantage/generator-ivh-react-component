@@ -19,6 +19,10 @@ module.exports = Generator.extend({
     this.props = {}
   },
 
+  paths: function() {
+    this.sourceRoot(path.normalize(__dirname + '/../../templates'))
+  },
+
   prompting: function () {
     // Have Yeoman greet the user.
     const me = chalk.red('ivh-react-component')
@@ -63,6 +67,9 @@ module.exports = Generator.extend({
       this.props.includeScss = 'Y' === props.includeScss.toUpperCase()
       this.props.installDeps = 'Y' === props.installDeps.toUpperCase()
       this.props.useDotFiles = 'Y' === props.useDotFiles.toUpperCase()
+      this.config.set(Object.assign({
+        generatorVersion: require('../../package.json').version
+      }, this.props))
     }.bind(this))
   },
 
@@ -113,6 +120,11 @@ module.exports = Generator.extend({
     if(this.props.installDeps) {
       this.installDependencies({bower: false})
     }
+  },
+
+  end: function() {
+    const msg = chalk.green('Done.')
+    this.log(msg)
   }
 })
 
