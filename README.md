@@ -19,6 +19,15 @@ Then generate your new project:
 yo ivh-react-component
 ```
 
+Later, you can update your component to take advantage of changes made to this
+generator:
+
+```bash
+yo ivh-react-component:update
+```
+
+Note that this will try to 
+
 Now go forth and build components.
 
 ## What's in the Box
@@ -43,19 +52,12 @@ JavaScript of today. The various babale plugins unluck different features for
 us.
 
 - "babel-core"
-- "babel-plugin-syntax-jsx"
-- "babel-preset-es2015"
-- "babel-preset-react"
+- "babel-preset-react-app"
+- "babel-plugin-transform-es2015-modules-commonjs"
 
-Jest is our test runner, it provides code coverage reports and interactive
-test running capabilities.
-
-Chai and mocha give us some nice struct and syntax for our tests suites and
-assertions. We need a few connecting plugins to make the test runner aware of
-these libraries.
-
-Enzyme is a special library with some handy utilities for testing with React
-elements.
+Jest is our test runner, it provides code coverage reports and interactive test
+running capabilities. Enzyme is a special library with some handy utilities for
+testing with React elements.
 
 - "enzyme"
 - "eslint"
@@ -93,14 +95,16 @@ around to let webpack correctly load and package up files. Note that the
 - "style-loader"
 
 Like a cross platform `rm -rf`, rimraf is just around to make cleaning old build
-artifacts easy.
+artifacts easy. Similarly `cross-env` let's us set environment variables for our
+scripts in a way that isn't platform dependent.
 
 - "rimraf"
+- "cross-env"
 
 
 ## License
 
-MIT © [iVantage Health Analytics, LLC](www.ivantagehealth.com)
+MIT Â© [iVantage Health Analytics, LLC](www.ivantagehealth.com)
 
 
 [npm-image]: https://badge.fury.io/js/generator-ivh-react-component.svg
