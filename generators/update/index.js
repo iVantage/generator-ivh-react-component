@@ -45,10 +45,14 @@ module.exports = Generator.extend({
     const pkgTpl = _.template(
       this.fs.read(this.templatePath('_package.json'))
     )
-    const pkg = pkgTpl(props)
+    const pkg = JSON.parse(pkgTpl(props))
 
+    // @todo - extendJSON will merge properties, for some things
+    // (devDependencies) we probably just want to set them so as to not carry
+    // forward cruft we don't need anymore.
     this.fs.extendJSON(this.destinationPath('package.json'), _.pick(pkg, [
       'name',
+      'main',
       'description',
       'scripts',
       'license',
