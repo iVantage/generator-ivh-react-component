@@ -9,7 +9,8 @@
     "url": "www.ivantagehealth.com"
   },
   "files": [
-    "generators"
+    "generators",
+    "templates"
   ],
   "main": "generators/index.js",
   "keywords": [
