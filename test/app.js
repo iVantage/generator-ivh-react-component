@@ -11,7 +11,8 @@ describe('generator-ivh-react-component:app', function() {
         className: 'FooBar',
         desc: 'Super blargus',
         useDotFiles: 'y',
-        installDeps: 'y'
+        includeScss: 'y',
+        installDeps: 'n'
       })
       .toPromise()
   })
