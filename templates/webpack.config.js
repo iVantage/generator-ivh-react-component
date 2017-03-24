@@ -2,6 +2,7 @@
 
 const path = require('path')
 const srcPath = path.join(__dirname, 'src')
+const distPath = path.join(__dirname, 'dist')
 
 module.exports = {
   entry: './src/index.js',
@@ -11,7 +12,7 @@ module.exports = {
   output: {
     library: '<%= className %>',
     libraryTarget: 'umd',
-    path: './dist',
+    path: distPath,
     filename: 'index.js'
   },
   externals: {
