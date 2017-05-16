@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import './<%= className %>.css'
 
 const propTypes = {
-  moniker: React.PropTypes.string
+  moniker: PropTypes.string
 }
 
 const defaultProps = {
