@@ -31,11 +31,6 @@ module.exports = {
   },
   module: {
     rules: [{
-      enforce: 'pre',
-      test: /\.js$/,
-      loader: 'eslint-loader',
-      include: srcPath
-    }, {
       test: /\.js$/,
       use: 'babel-loader',
       include: srcPath

@@ -6,19 +6,19 @@ const _ = require('lodash')
 _.templateSettings.interpolate = /<%=([\s\S]+?)%>/g
 
 module.exports = Generator.extend({
-  initializing: function() {
+  initializing: function () {
     this.props = {}
   },
 
-  paths: function() {
-    this.sourceRoot(path.normalize(__dirname + '/../../templates'))
+  paths: function () {
+    this.sourceRoot(path.normalize(path.join(__dirname, '/../../templates')))
   },
 
   writing: function () {
     const props = this.config.getAll()
     const newVersion = require('../../package.json').version
 
-    if(!this.fs.exists(this.destinationPath('.yo-rc.json'))) {
+    if (!this.fs.exists(this.destinationPath('.yo-rc.json'))) {
       this.log(chalk.red('Refusing to update, a .yo-rc.json file is required.'))
       return
     }
@@ -47,6 +47,21 @@ module.exports = Generator.extend({
     )
     const pkg = JSON.parse(pkgTpl(props))
 
+    // No longer using eslint
+    delete pkg.devDependencies['babel-eslint']
+    delete pkg.devDependencies['eslint']
+    delete pkg.devDependencies['eslint-config-ivantage']
+    delete pkg.devDependencies['eslint-loader']
+    delete pkg.devDependencies['eslint-plugin-react']
+
+    // React update 15.4 --> 15.5
+    delete pkg.devDependencies['react-addons-shallow-compare']
+    delete pkg.devDependencies['react-addons-test-utils']
+    delete pkg.devDependencies['prop-types'] // oops
+
+    // Removed postcss plugins
+    delete pkg.devDependencies['postcss-custom-properties']
+
     // @todo - extendJSON will merge properties, for some things
     // (devDependencies) we probably just want to set them so as to not carry
     // forward cruft we don't need anymore.
@@ -62,28 +77,29 @@ module.exports = Generator.extend({
     ]))
     cpTpl('webpack.config.js', 'webpack.config.js')
 
-    if(props.useDotFiles) {
+    if (props.useDotFiles) {
       cp('_editorconfig', '.editorconfig')
-      cp('_eslintrc.js', '.eslintrc.js')
       cp('_gitignore', '.gitignore')
       cp('_babelrc', '.babelrc')
     } else {
       [
         '.editorconfig',
-        '.eslintrc.js',
         '.gitignore',
         '.babelrc'
       ].forEach(rm)
     }
 
+    // Standard over eslint!
+    rm('.eslintrc.js')
+
+    // No longer using explicit mock files
+    rm('src/mocks')
+
     this.config.set('generatorVersion', newVersion)
   },
 
-  end: function() {
+  end: function () {
     const msg = chalk.green('Done.')
     this.log(msg)
   }
-
 })
-
-

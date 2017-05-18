@@ -15,12 +15,12 @@ const guessComponentName = () => {
 }
 
 module.exports = Generator.extend({
-  initializing: function() {
+  initializing: function () {
     this.props = {}
   },
 
-  paths: function() {
-    this.sourceRoot(path.normalize(__dirname + '/../../templates'))
+  paths: function () {
+    this.sourceRoot(path.normalize(path.join(__dirname, '/../../templates')))
   },
 
   prompting: function () {
@@ -46,7 +46,7 @@ module.exports = Generator.extend({
     }, {
       type: 'input',
       name: 'useDotFiles',
-      message: 'Shall I include dot files, e.g. babel/eslint configs? (Y/n).',
+      message: 'Shall I include dot files, e.g. babel configs? (Y/n).',
       default: 'Y'
     }, {
       type: 'input',
@@ -64,9 +64,9 @@ module.exports = Generator.extend({
       // To access props later use this.props.someAnswer
       this.props = props
       // override props
-      this.props.includeScss = 'Y' === props.includeScss.toUpperCase()
-      this.props.installDeps = 'Y' === props.installDeps.toUpperCase()
-      this.props.useDotFiles = 'Y' === props.useDotFiles.toUpperCase()
+      this.props.includeScss = props.includeScss.toUpperCase() === 'Y'
+      this.props.installDeps = props.installDeps.toUpperCase() === 'Y'
+      this.props.useDotFiles = props.useDotFiles.toUpperCase() === 'Y'
       this.config.set(Object.assign({
         generatorVersion: require('../../package.json').version
       }, this.props))
@@ -92,15 +92,12 @@ module.exports = Generator.extend({
       )
     }
 
-    if(this.props.useDotFiles) {
+    if (this.props.useDotFiles) {
       cp('_editorconfig', '.editorconfig')
-      cp('_eslintrc.js', '.eslintrc.js')
       cp('_gitignore', '.gitignore')
       cp('_babelrc', '.babelrc')
     }
 
-    cp('src/mocks/fileMock.js', 'src/mocks/fileMock.js')
-    cp('src/mocks/styleMock.js', 'src/mocks/styleMock.js')
     cp('postcss.config.js', 'postcss.config.js')
     cpTpl('webpack.config.js', 'webpack.config.js')
     cpTpl('_package.json', 'package.json')
@@ -117,14 +114,13 @@ module.exports = Generator.extend({
   },
 
   install: function () {
-    if(this.props.installDeps) {
+    if (this.props.installDeps) {
       this.installDependencies({bower: false})
     }
   },
 
-  end: function() {
+  end: function () {
     const msg = chalk.green('Done.')
     this.log(msg)
   }
 })
-

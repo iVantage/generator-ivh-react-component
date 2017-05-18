@@ -1,7 +1,6 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import './<%= className %>.css'
 
 const propTypes = {
@@ -12,13 +11,12 @@ const defaultProps = {
   moniker: 'World'
 }
 
-class <%= className %> extends React.Component {
-  render() {
-    const moniker = this.props.moniker
-    return (
-      <h1 className="<%= className %>">Hello, {moniker}</h1>
-    )
-  }
+const <%= className %> = (props) => {
+  return (
+    <h1 className='<%= className %>'>
+      Hello, {props.moniker}
+    </h1>
+  )
 }
 
 <%= className %>.propTypes = propTypes
