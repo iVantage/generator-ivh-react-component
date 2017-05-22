@@ -4,10 +4,12 @@
   "description": "<%= desc %>",
   "main": "dist/index.js",
   "files": [
+    "src",
     "dist"
   ],
   "scripts": {
     "build": "npm run clean && cross-env NODE_ENV=production webpack",
+    "build:watch": "npm run clean && cross-env NODE_ENV=production webpack --watch",
     "clean": "rimraf dist",
     "test": "npm run lint && jest --coverage",
     "test:watch": "jest --watchAll",
@@ -29,25 +31,25 @@
     "react": "^15.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^6.7.6",
-    "babel-core": "^6.22.0",
-    "babel-loader": "^6.2.5",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.0",
-    "babel-preset-react-app": "^2.2.0",
-    "cross-env": "^3.2.4",
-    "css-loader": "^0.26.2",
-    "enzyme": "^2.7.1",
+    "autoprefixer": "^7.1.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-preset-react-app": "^3.0.0",
+    "cross-env": "^5.0.0",
+    "css-loader": "^0.28.1",
+    "enzyme": "^2.8.2",
     "file-loader": "^0.11.1",
     "jest": "^20.0.3",<% if(includeScss) { %>
-    "node-sass": "^4.5.0",<% } %>
-    "postcss-loader": "^1.3.3",
+    "node-sass": "^4.5.3",<% } %>
+    "postcss-loader": "^2.0.5",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-test-renderer": "^15.5.4",
     "rimraf": "^2.6.1",<% if(includeScss) { %>
-    "sass-loader": "^6.0.2",<% } %>
+    "sass-loader": "^6.0.5",<% } %>
     "standard": "^10.0.2",
-    "style-loader": "^0.13.2",
-    "webpack": "^2.3.1"
+    "style-loader": "^0.17.0",
+    "webpack": "^2.5.1"
     }
 }

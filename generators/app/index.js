@@ -74,7 +74,6 @@ module.exports = Generator.extend({
   },
 
   writing: function () {
-    const className = this.props.className
     const moduleName = this.props.moduleName
 
     const cp = (from, to) => {
@@ -105,12 +104,12 @@ module.exports = Generator.extend({
     cpTpl('src/index.js', 'src/index.js')
     cpTpl('src/components/greeter/index.js',
         `src/components/${moduleName}/index.js`)
-    cpTpl('src/components/greeter/Greeter.js',
-        `src/components/${moduleName}/${className}.js`)
-    cpTpl('src/components/greeter/Greeter.css',
-        `src/components/${moduleName}/${className}.css`)
-    cpTpl('src/components/greeter/Greeter.spec.js',
-        `src/components/${moduleName}/${className}.spec.js`)
+    cpTpl('src/components/greeter/greeter.js',
+        `src/components/${moduleName}/${moduleName}.js`)
+    cpTpl('src/components/greeter/greeter.css',
+        `src/components/${moduleName}/${moduleName}.css`)
+    cpTpl('src/components/greeter/greeter.test.js',
+        `src/components/${moduleName}/${moduleName}.test.js`)
   },
 
   install: function () {

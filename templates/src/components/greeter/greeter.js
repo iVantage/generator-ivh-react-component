@@ -1,7 +1,7 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import './<%= className %>.css'
+import './<%= moduleName %>.css'
 
 const propTypes = {
   moniker: PropTypes.string

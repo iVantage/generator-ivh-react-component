@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { shallow } from 'enzyme'
-import <%= className %> from './<%= className %>'
+import <%= className %> from './<%= moduleName %>'
 
 describe('<<%= className %> />', () => {
   it('should greet the given moniker', () => {

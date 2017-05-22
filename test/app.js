@@ -29,9 +29,9 @@ describe('generator-ivh-react-component:app', () => {
       'postcss.config.js',
       'src/index.js',
       'src/components/foo-bar/index.js',
-      'src/components/foo-bar/FooBar.js',
-      'src/components/foo-bar/FooBar.css',
-      'src/components/foo-bar/FooBar.spec.js',
+      'src/components/foo-bar/foo-bar.js',
+      'src/components/foo-bar/foo-bar.css',
+      'src/components/foo-bar/foo-bar.test.js',
       'webpack.config.js'
     ])
   })
