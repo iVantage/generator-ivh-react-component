@@ -48,19 +48,25 @@ module.exports = Generator.extend({
     const pkg = JSON.parse(pkgTpl(props))
 
     // No longer using eslint
-    delete pkg.devDependencies['babel-eslint']
-    delete pkg.devDependencies['eslint']
-    delete pkg.devDependencies['eslint-config-ivantage']
-    delete pkg.devDependencies['eslint-loader']
-    delete pkg.devDependencies['eslint-plugin-react']
+    pkg.devDependencies['babel-eslint'] = undefined
+    pkg.devDependencies['eslint'] = undefined
+    pkg.devDependencies['eslint-config-ivantage'] = undefined
+    pkg.devDependencies['eslint-loader'] = undefined
+    pkg.devDependencies['eslint-plugin-react'] = undefined
+
+    pkg.devDependencies['babel-eslint'] = undefined
+    pkg.devDependencies['eslint'] = undefined
+    pkg.devDependencies['eslint-config-ivantage'] = undefined
+    pkg.devDependencies['eslint-loader'] = undefined
+    pkg.devDependencies['eslint-plugin-react'] = undefined
 
     // React update 15.4 --> 15.5
-    delete pkg.devDependencies['react-addons-shallow-compare']
-    delete pkg.devDependencies['react-addons-test-utils']
-    delete pkg.devDependencies['prop-types'] // oops
+    pkg.devDependencies['react-addons-shallow-compare'] = undefined
+    pkg.devDependencies['react-addons-test-utils'] = undefined
+    pkg.devDependencies['prop-types'] = undefined
 
     // Removed postcss plugins
-    delete pkg.devDependencies['postcss-custom-properties']
+    pkg.devDependencies['postcss-custom-properties'] = undefined
 
     // @todo - extendJSON will merge properties, for some things
     // (devDependencies) we probably just want to set them so as to not carry
