@@ -24,10 +24,7 @@
     "yeoman-generator": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^3.1.1",
-    "eslint-config-ivantage": "^0.2.0",
     "gulp": "^3.9.0",
-    "gulp-eslint": "^3.0.1",
     "gulp-exclude-gitignore": "^1.0.0",
     "gulp-istanbul": "^1.0.0",
     "gulp-line-ending-corrector": "^1.0.1",
@@ -37,14 +34,6 @@
     "gulp-standard": "^10.0.0",
     "yeoman-assert": "^2.2.1",
     "yeoman-test": "^1.6.0"
-  },
-  "eslintConfig": {
-    "extends": "ivantage",
-    "env": {
-      "es6": true,
-      "node": true,
-      "mocha": true
-    }
   },
   "repository": "ivantage/generator-ivh-react-component",
   "scripts": {
