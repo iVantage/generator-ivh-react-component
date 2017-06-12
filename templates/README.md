@@ -16,7 +16,7 @@ How to use `<%= className %>`:
 @todo
 
 - Single entrypoint
-- Partner `_spec` file
+- Partner `.test.js` file
 
 
 ## Scripts
@@ -28,3 +28,4 @@ How to use `<%= className %>`:
   `./coverage/<platform>`.
 - `npm run test:watch` Execute tests continuously as files are updated.
 - `npm run build` Clean old build artifacts and run webpack for production.
+- `npm run build:watch` Build whenever src files change
