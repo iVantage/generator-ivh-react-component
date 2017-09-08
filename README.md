@@ -102,9 +102,15 @@ scripts in a way that isn't platform dependent.
 - "cross-env"
 
 
+### Package Versions
+
+Package versions will be kept in sync with create-react-app where they overlap.
+This is done to maximize hoisting in monorepo workflows.
+
+
 ## License
 
-MIT Â© [iVantage Health Analytics, LLC](www.ivantagehealth.com)
+MIT ÃÂ© [iVantage Health Analytics, LLC](www.ivantagehealth.com)
 
 
 [npm-image]: https://badge.fury.io/js/generator-ivh-react-component.svg

@@ -48,17 +48,13 @@ module.exports = Generator.extend({
     const pkg = JSON.parse(pkgTpl(props))
 
     // No longer using eslint
-    pkg.devDependencies['babel-eslint'] = undefined
-    pkg.devDependencies['eslint'] = undefined
-    pkg.devDependencies['eslint-config-ivantage'] = undefined
-    pkg.devDependencies['eslint-loader'] = undefined
-    pkg.devDependencies['eslint-plugin-react'] = undefined
+    pkg.dependencies['eslint'] = undefined
+    pkg.dependencies['eslint-config-ivantage'] = undefined
+    pkg.dependencies['eslint-loader'] = undefined
 
-    pkg.devDependencies['babel-eslint'] = undefined
     pkg.devDependencies['eslint'] = undefined
     pkg.devDependencies['eslint-config-ivantage'] = undefined
     pkg.devDependencies['eslint-loader'] = undefined
-    pkg.devDependencies['eslint-plugin-react'] = undefined
 
     // React update 15.4 --> 15.5
     pkg.devDependencies['react-addons-shallow-compare'] = undefined
