@@ -43,7 +43,7 @@
     "jest": "20.0.3",<% if(includeScss) { %>
     "node-sass": "^4.5.3",<% } %>
     "postcss-loader": "2.0.6",
-    "react": "^15.6.2",
+    "react": "15.6.2",
     "react-dom": "15.6.2",
     "react-test-renderer": "15.6.2",
     "rimraf": "^2.6.1",<% if(includeScss) { %>
