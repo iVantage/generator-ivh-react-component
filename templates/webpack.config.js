@@ -24,7 +24,7 @@ externals.react = {
   amd: 'react'
 }
 
-external['react-dom'] = {
+externals['react-dom'] = {
   root: 'ReactDOM',
   commonjs: 'react-dom',
   commonjs2: 'react-dom',
